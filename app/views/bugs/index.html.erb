@@ -1,0 +1,26 @@
+<h1>Listing bugs</h1>
+<hr>
+
+<table class="table table-striped">
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Status</th>
+    <th>Priority</th>
+    <th>Actions</th>
+  </tr>
+
+  <% @bugs.each do |bug| %>
+    <tr>
+      <td><%= bug.title %></td>
+      <td><%= bug.description %></td>
+      <td><%= bug.status %></td>
+      <td><%= bug.priority %></td>
+      <td>
+        <%= link_to "Edit", edit_bug_path(bug) %>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <%= link_to "Delete", bug_path(bug), method: :delete, confirm: "Are you sure?" %>
+      </td>
+    </tr>
+  <% end %>
+</table>
