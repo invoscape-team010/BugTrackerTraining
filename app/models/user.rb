@@ -4,4 +4,6 @@ class User < ActiveRecord::Base
   validates :name, presence: true
   validates :email, presence: true,
     format: {with: /^[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,4}$/i }, uniqueness: true
+
+  has_many :bugs, dependent: :nullify
 end

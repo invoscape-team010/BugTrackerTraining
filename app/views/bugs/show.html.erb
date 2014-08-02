@@ -20,3 +20,10 @@
   <h3>Priority: </h3>
   <%= @bug.priority %>
 </p>
+
+<% if @bug.user.present? %>
+  <p>
+    <h3>Assigned To User: </h3>
+    <%= @bug.user.name %>
+  </p>
+<% end %>
